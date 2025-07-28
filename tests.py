@@ -26,6 +26,10 @@ class TestCheckPwd(unittest.TestCase):
         """Test that passwords without uppercase letters are rejected"""
         self.assertFalse(check_pwd("zxcvbnm1!"))  # valid length, no uppercase
 
+    def test_no_digit(self):
+        """Test that passwords without digits are rejected"""
+        self.assertFalse(check_pwd("ZxcvbnmA!"))  # valid length, no digit
+
 
 if __name__ == "__main__":
   unittest.main()
