@@ -23,4 +23,8 @@ def check_pwd(pwd):
     # Check for at least one digit
     if not any(c.isdigit() for c in pwd):
         return False
+    # Check for at least one allowed symbol
+    allowed_symbols = set("~`!@#$%^&*()_+-=")  # Information from Canvas A2 TDD page
+    if not any(c in allowed_symbols for c in pwd):
+        return False
     return True
