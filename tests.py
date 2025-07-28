@@ -30,6 +30,10 @@ class TestCheckPwd(unittest.TestCase):
         """Test that passwords without digits are rejected"""
         self.assertFalse(check_pwd("ZxcvbnmA!"))  # valid length, no digit
 
+    def test_no_symbol(self):
+        """Test that passwords without allowed symbols are rejected"""
+        self.assertFalse(check_pwd("Zxcvbnm12"))  # valid length, no symbol
+
 
 if __name__ == "__main__":
   unittest.main()
