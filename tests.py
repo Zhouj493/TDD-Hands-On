@@ -14,5 +14,10 @@ class TestCheckPwd(unittest.TestCase):
         """Test that passwords shorter than 8 characters are rejected"""
         self.assertFalse(check_pwd("Zx12!"))  # 5 characters
 
+    def test_long_password(self):
+        """Test that passwords longer than 20 characters are rejected"""
+        self.assertFalse(check_pwd("Z" * 19 + "x1!"))  # 23 characters
+
+
 if __name__ == "__main__":
   unittest.main()
