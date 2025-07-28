@@ -4,11 +4,15 @@
 # Description: This is the unit test file for the check_pwd module, with TDD process.
 
 import unittest
-from check_pwd import check_pwd  #check_pwd is requirement in Canvas explaination
+from check_pwd import check_pwd  #check_pwd is requirement in Canvas explanation
 
 
+# Citation for the following lines:
+# Adopted from: https://docs.python.org/3/library/stdtypes.html
 class TestCheckPwd(unittest.TestCase):
-  pass
+    def test_short_password(self):
+        """Test that passwords shorter than 8 characters are rejected"""
+        self.assertFalse(check_pwd("Zx12!"))  # 5 characters
 
 if __name__ == "__main__":
   unittest.main()
