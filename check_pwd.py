@@ -10,4 +10,7 @@ def check_pwd(pwd):
     # Check if password is too short (less than 8 characters)
     if len(pwd) < 8:
         return False
+    # Check if password is too long (more than 20 characters)
+    if len(pwd) > 20:
+        return False
     return True
