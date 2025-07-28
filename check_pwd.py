@@ -17,4 +17,7 @@ def check_pwd(pwd):
     # Check for at least one lowercase letter
     if not any(c.islower() for c in pwd):
         return False
+    # Check for at least one uppercase letter
+    if not any(c.isupper() for c in pwd):
+        return False
     return True
